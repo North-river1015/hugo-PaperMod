@@ -51,6 +51,11 @@
 {{- partial "home_info.html" . }}
 {{- end }}
 
+
+
+
+
+{{/* This part should be ignored by hugo
 {{- $term := .Data.Term }}
 {{- range $index, $page := $paginator.Pages }}
 
@@ -92,6 +97,18 @@
   <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
 </article>
 {{- end }}
+
+*/}}
+
+
+
+
+
+
+
+
+
+
 
 {{- if gt $paginator.TotalPages 1 }}
 <footer class="page-footer">
