@@ -149,3 +149,43 @@ Read https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#bundling-custom-cs
     aspect-ratio: 1 / 1; /* 正方形に近い比率を維持 */
     object-fit: contain;
 }
+
+
+
+
+
+
+
+
+.geolonia-svg-map {
+    shape-rendering: geometricPrecision; /* 描画を滑らかにする */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05)); /* 境界の粗さを影でごまかす */
+}
+
+/* 密集している関東・近畿を少しだけ押しやすくする */
+.kanto prefecture, .kinki prefecture {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+/* デフォルト（PC）では非表示 */
+.mobile-only-map {
+    display: none;
+}
+
+
+
+
+/* 画面幅が768px以下（モバイル）の時だけ表示 */
+@media screen and (max-width: 768px) {
+    .mobile-only-map {
+        display: block;
+        width: 100%;
+        margin: 20px 0;
+    }
+    
+    /* モバイルでタップしやすくするための設定 */
+    .geolonia-svg-map {
+        touch-action: manipulation;
+    }
+}
